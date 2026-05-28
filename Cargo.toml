@@ -19,6 +19,7 @@ harness = false
 name = "rsomics_vcf_mpileup"
 path = "src/lib.rs"
 
+doctest = false
 [[bin]]
 name = "rsomics-vcf-mpileup"
 path = "src/main.rs"
