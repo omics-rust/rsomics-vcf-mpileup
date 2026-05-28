@@ -1,11 +1,11 @@
 [package]
 name = "rsomics-vcf-mpileup"
 version = "0.1.0"
-edition.workspace = true
-rust-version.workspace = true
-license.workspace = true
+edition = "2024"
+rust-version = "1.91"
+license = "MIT OR Apache-2.0"
 repository = "https://github.com/omics-rust/rsomics-vcf-mpileup"
-authors.workspace = true
+authors = ["Zane Leong <efd@live.com>"]
 description = "VCF-emitting pileup (genotype likelihoods) from BAM — Rust port of bcftools mpileup single-sample SNP mode"
 readme = "README.md"
 categories = ["science"]
@@ -28,8 +28,8 @@ path = "src/main.rs"
 rsomics-common = { version = "0.6" }
 rsomics-bamio = { version = "0.1" }
 rsomics-pileup = { version = "0.1" }
-clap.workspace = true
+clap = { version = "4", features = ["derive"] }
 noodles = { version = "0.110", features = ["fasta", "sam", "bam", "bgzf"] }
 
 [dev-dependencies]
-criterion.workspace = true
+criterion = { version = "0.7", default-features = false, features = ["cargo_bench_support"] }
