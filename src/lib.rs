@@ -40,8 +40,6 @@ use errmod::ErrMod;
 use gl::process_column;
 use vcf::write_header;
 
-// ── public constants ──────────────────────────────────────────────────────────
-
 /// Default minimum mapping quality (`-q`).
 pub const DEFAULT_MIN_MAPQ: u8 = 0;
 /// Default minimum base quality (`-Q`).
@@ -51,8 +49,6 @@ pub const DEFAULT_MAX_DEPTH: u32 = 250;
 
 /// FLAG bits filtered by default: UNMAP|SECONDARY|QCFAIL|DUP.
 const DEFAULT_RFLAG_FILTER: u16 = 0x004 | 0x100 | 0x200 | 0x400;
-
-// ── public options ────────────────────────────────────────────────────────────
 
 #[derive(Debug, Clone)]
 pub struct VcfMpileupOpts {
@@ -74,8 +70,6 @@ impl Default for VcfMpileupOpts {
         }
     }
 }
-
-// ── entry point ───────────────────────────────────────────────────────────────
 
 /// Run vcf-mpileup, writing VCF (uncompressed) to `out`.
 ///
@@ -212,8 +206,6 @@ pub fn run(bam: &Path, fasta_ref: &Path, out: impl Write, opts: &VcfMpileupOpts)
     out.flush().map_err(RsomicsError::Io)?;
     Ok(())
 }
-
-// ── private helpers ───────────────────────────────────────────────────────────
 
 fn load_reference(path: &Path) -> Result<HashMap<String, Vec<u8>>> {
     let file = std::fs::File::open(path)
